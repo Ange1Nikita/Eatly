@@ -1,0 +1,23 @@
+/* fonts.css */
+@font-face {
+    font-family: "Inter";
+    src: url('Inter-VariableFont_opsz,wght.woff2') format('woff2'),
+         url('Inter-VariableFont_opsz,wght.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Poppins";
+    src: url('Poppins-Black.woff2') format('woff2'),
+         url('Poppins-Black.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Public Sans";
+    src: url('AnyConv.com__PublicSans-VariableFont_wght.woff2') format('woff2'),
+         url('PublicSans-VariableFont_wght.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+  }
