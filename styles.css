@@ -33,7 +33,6 @@ a {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 15px;
-    overflow-x: hidden;
 }
 
 header {
@@ -365,6 +364,8 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding-top: 103px;
+    padding-bottom: clamp(66px,9.63vw,120px);
+    border-bottom: solid 2px #CBCBCB;
 }
 .premium__grid-item{
     display: flex;
@@ -381,7 +382,7 @@ header {
     font-family: "Poppins", serif;
     font-weight: 700;
     padding-bottom: 64px;
-    width: 59%;
+    width: 100%;
 }
 .premium__grid-item-title span{
     color: #6C5FBC;
@@ -396,6 +397,7 @@ header {
     font-family: "Inter", serif;
 }
 .premium__grid-item-button{
+    position: relative;
     font-family: "Poppins", serif;
     font-size: clamp(11px,1.25vw,18px);
     font-weight: 500;
@@ -408,8 +410,131 @@ header {
     background-image: url(img/premium/arrow-right.svg);
     background-repeat: no-repeat;
     background-position:96%;
-
-
+}
+.premium__grid-item-button:hover{
+    background-color: white;
+    color: #6C5FBC;
+    transition: 0.8s;
+    background-image: url(img/premium/arrow-right2.svg);
+    background-repeat: no-repeat;
+}
+.premium__grid-item-button::before{
+    display: block;
+    content: "";
+    width: 100%;
+    height: 120%;
+    background-image: url(img/premium/Vector\ 14.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 100%;
+    top: 60%;
+}
+.restaurants__title{
+    font-size: clamp(30px,3.61vw,45px);
+    font-family: "Poppins", serif; 
+    color: #323142;
+    padding-top: clamp(50px,8.02vw,100px);
+    text-align: center;
+    font-weight: 600;
+}
+.restaurants__title span{
+    color: #6C5FBC;
+}
+.restaurants__grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 31px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: clamp(50px,19.02vw,237px);
+    padding-top: clamp(50px,6.82vw,85px);
+    border-bottom: solid 2px #CBCBCB;
+}
+.restaurants__grid-item{
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 6px 71px 36px rgba(229, 229, 229, 0.7);
+}
+.restaurants__grid-item:hover {
+    transform: scale(1.07);
+    box-shadow: 6px 80px 40px rgba(229, 229, 229, 0.9); 
+    transition: 0.3s;
+}
+.restaurants__grid-item-img{
+    width: 118%;
+    position: relative;
+    height: auto;
+    left: -27px;
+}
+.restaurants__grid-item-title{
+    font-size: 13px;
+    color: #DAA31A;
+    font-family: "Poppins", serif; 
+    background-color: #F7EDD0;
+    text-align: center;
+    width: 60px;
+    border-radius: 6px;
+    padding: 5px 5px;
+    margin-bottom: 8px;
+    margin-left: 32px;
+    margin-top: 10px;
+}
+.restaurants__grid-item-title--red{
+    font-size: 13px;
+    color: #FB471D;
+    font-family: "Poppins", serif; 
+    background-color: #F7C5BA;
+    text-align: center;
+    width: 60px;
+    border-radius: 6px;
+    padding: 5px 5px;
+    margin-bottom: 8px;
+    margin-left: 32px;
+    margin-top: 10px;
+}
+.restaurants__grid-item-subtitle{
+    font-size: clamp(20px,2.08vw,26px);
+    font-family: "Poppins", serif; 
+    margin-left: 32px;
+    color: #323142;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+.restaurants__grid-item-flex-text-star{
+    display: flex;
+    align-items: start;
+    position: relative;
+}
+.restaurants__grid-item-flex-text-star::after{
+    display: block;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url(img/restaurants/Bookmark.svg);
+    background-repeat: no-repeat;
+    left: 83%;
+    top: -36%;
+}
+.restaurants__grid-item-flex-min{
+    margin-left: 32px;
+    color: #8E97A6;
+    font-size: 20px;
+    font-family: "Manrope", serif; 
+    font-weight: normal;
+    padding-bottom: 18px;
+    padding-right: 8px;
+}
+.restaurants__grid-item-flex-text{
+    font-size: 20px;
+    color: #8E97A6;
+    padding-left: 8px;
+    padding-top: 3px;
 }
 @media (max-width: 904px) {
     .header__grid {
@@ -427,7 +552,6 @@ header {
         display: flex;
         position: relative;
         top: 50%; 
-        padding-right: 30px;
     }
     .mobile-menu .header__login{
         display: none;
@@ -484,6 +608,9 @@ header {
     .about__grid-item{
         padding-bottom: 60px;
     }
+    .about__grid-item::after{
+        display: none;
+    }
     .about__grid-item::before{
         position: absolute;
         display: block;
@@ -514,14 +641,30 @@ header {
     .premium__grid-item-title{
         padding-bottom: 37px;
         width: 100%;
+        text-align: center;
     }
     .premium__grid-item-button{
-        margin-bottom: 100px;
+        margin-bottom: 116px;
+        width: 33%;
+        padding: 15px 20px;
+    }
+    .premium__grid-item-button::before{
+        transform: rotate(112deg);
+        left: -94%;
+        top: 180%;
+        width: 130%;
+        height: 150%;
+    }
+    .premium__grid-item-img{
+        padding-left: 30%;
+    }
+    .restaurants__grid{
+        display: flex;
+        flex-direction: column;
     }
 }
 
-
-@media (max-width: 424px) {
+@media (max-width: 448px){
     .header__login{
         display: none;
     }
